@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import AppKit
 
 struct ContentView: View {
     @EnvironmentObject var manager: KepubifyManager
@@ -56,11 +57,7 @@ struct ContentView: View {
             .navigationTitle("Kepubify")
             .fileImporter(
                 isPresented: $showFileImporter,
-                allowedContentTypes: [
-                    UTType(filenameExtension: "epub")!,
-                    UTType(filenameExtension: "kepub")!,
-                    UTType(filenameExtension: "kepub.epub")!
-                ],
+                allowedContentTypes: [.data],
                 allowsMultipleSelection: true
             ) { result in
                 handleFileImport(result: result)
