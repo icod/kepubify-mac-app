@@ -1,0 +1,95 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-release:
+    name: Build Release
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Select Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+          
+      - name: Install Homebrew dependencies
+        run: |
+          brew install kepubify
+          
+      - name: Build the app for release (ARM64 - Apple Silicon)
+        run: |
+          cd ${{ github.workspace }}
+          swift build -c release --arch arm64
+          
+      - name: Create .app bundle
+        run: |
+          cd ${{ github.workspace }}
+          # Find the built executable
+          EXECUTABLE_PATH=$(find .build/arm64-apple-macosx/release -name "KepubifyMacApp" -type f | head -1)
+          
+          # Create .app bundle structure
+          APP_BUNDLE="KepubifyMacApp.app"
+          mkdir -p "$APP_BUNDLE/Contents/MacOS"
+          mkdir -p "$APP_BUNDLE/Contents/Resources"
+          
+          # Copy executable
+          cp "$EXECUTABLE_PATH" "$APP_BUNDLE/Contents/MacOS/"
+          
+          # Create Info.plist
+          cat > "$APP_BUNDLE/Contents/Info.plist" << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>CFBundleExecutable</key>
+              <string>KepubifyMacApp</string>
+              <key>CFBundleIdentifier</key>
+              <string>com.icod.kepubify-mac-app</string>
+              <key>CFBundleName</key>
+              <string>Kepubify Mac App</string>
+              <key>CFBundleVersion</key>
+              <string>${{ github.ref_name }}</string>
+              <key>CFBundleShortVersionString</key>
+              <string>${{ github.ref_name }}</string>
+              <key>NSHighResolutionCapable</key>
+              <true/>
+              <key>NSRequiresAquaSystemAppearance</key>
+              <false/>
+          </dict>
+          </plist>
+          EOF
+          
+          # Create .zip archive
+          zip -r "KepubifyMacApp-${{ github.ref_name }}.zip" "KepubifyMacApp.app"
+          
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            KepubifyMacApp-${{ github.ref_name }}.zip
+          name: Kepubify Mac App ${{ github.ref_name }}
+          body: |
+            macOS application for converting EPUB files to Kobo KEPUB format.
+            
+            **Architecture:** ARM64 (Apple Silicon)
+            **macOS Version:** 12.0+
+            
+            ### Installation
+            1. Download the .zip file
+            2. Extract the .app bundle
+            3. Move to Applications folder
+            4. Right-click and Open to bypass Gatekeeper (first time only)
+            
+            **Note:** Requires [Kepubify](https://pgaskin.net/kepubify/) to be installed on your system.
+            Install with: `brew install kepubify`
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

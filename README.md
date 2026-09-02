@@ -66,12 +66,14 @@ This project uses **Swift Package Manager** (SPM) for dependency management.
 ### Command Line Build Options
 
 ```bash
-# Build for release
-swift build -c release
-
-# Build for specific architecture
+# Build for release (Apple Silicon / ARM64)
 swift build -c release --arch arm64
+
+# Build for Intel (x86_64)
 swift build -c release --arch x86_64
+
+# Build universal binary (both architectures)
+swift build -c release -Xswiftc "-target" -Xswiftc "arm64-apple-macosx12.0" -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx12.0"
 
 # Run tests
 swift test
@@ -82,6 +84,8 @@ swift test --enable-code-coverage
 # Build and run
 swift run
 ```
+
+**Note:** The GitHub Actions workflow builds for **ARM64 (Apple Silicon)** by default. The app runs natively on Apple Silicon Macs.
 
 ## Usage
 
@@ -151,15 +155,29 @@ swift test --enable-code-coverage
 
 ## Continuous Integration
 
-The project includes a GitHub Actions workflow that:
+The project includes GitHub Actions workflows for automated building, testing, and releasing:
+
+### Build and Test Workflow
+Runs automatically on pushes and pull requests to the main branch:
 1. Checks out the repository
 2. Sets up the build environment with Xcode
 3. Installs Homebrew dependencies (Kepubify)
 4. Builds the app using Swift Package Manager
 5. Runs all tests
-6. Uploads test results and build artifacts
+6. Uploads test results
 
-The workflow runs automatically on pushes and pull requests to the main branch.
+### Release Workflow
+Automatically creates releases when tags are pushed (format: `v*`):
+1. Builds the app for **ARM64 (Apple Silicon)**
+2. Creates a proper `.app` bundle
+3. Packages it as a `.zip` file
+4. Uploads the release to GitHub with release notes
+
+To create a release:
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
 
 ## Troubleshooting
 
