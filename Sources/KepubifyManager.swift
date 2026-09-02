@@ -17,7 +17,7 @@ enum ConversionStatus: String {
 
 struct ConversionResult {
     let success: Bool
-    let message: String
+    let message: String?
     let outputPath: String?
 }
 

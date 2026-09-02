@@ -108,18 +108,18 @@ class KepubifyManagerTests: XCTestCase {
         // Mock a scenario where kepubify doesn't exist
         let expectation = self.expectation(description: "Test conversion without kepubify")
         
-        // Temporarily override findKepubifyPath to return nil
-        let originalMethod = manager.findKepubifyPath
-        manager.findKepubifyPath = { nil }
-        
+        // Create a test file
         let testFile = self.tempDirectory.appendingPathComponent("test.epub")
         let data = "test".data(using: .utf8)!
         try? data.write(to: testFile)
         
+        // Test conversion - kepubify won't be found in CI environment
         manager.convertFiles(at: [testFile], options: KepubifyOptions()) { result in
             XCTAssertFalse(result.success)
             XCTAssertNotNil(result.message)
-            XCTAssertTrue(result.message?.contains("Kepubify not found") ?? false)
+            if let message = result.message {
+                XCTAssertTrue(message.contains("Kepubify not found"))
+            }
             expectation.fulfill()
         }
         
