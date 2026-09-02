@@ -56,7 +56,7 @@ struct ContentView: View {
             .navigationTitle("Kepubify")
             .fileImporter(
                 isPresented: $showFileImporter,
-                allowedContentTypes: [UTType.fileURL],
+                allowedContentTypes: [UTType.data],
                 allowsMultipleSelection: true
             ) { result in
                 handleFileImport(result: result)
