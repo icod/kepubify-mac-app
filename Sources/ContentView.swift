@@ -138,7 +138,7 @@ struct ContentView: View {
             }
             
             if !inputFiles.isEmpty {
-                List(inputFiles, id: \.self, selection: .constant(nil)) { url in
+                List(inputFiles, id: \.self, selection: .constant(nil as URL?)) { url in
                     HStack {
                         Image(systemName: "doc.fill")
                             .foregroundColor(.blue)
