@@ -408,11 +408,11 @@ struct ContentView: View {
         }
         
         manager.convertFiles(at: inputFiles, options: options) { result in
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 if result.success {
                     alertMessage = "Conversion completed! Output: \(result.outputPath ?? "")"
                 } else {
-                    alertMessage = result.message
+                    alertMessage = result.message ?? "Conversion failed"
                 }
                 showAlert = true
             }
