@@ -11,15 +11,15 @@
 		83E63F1E2C18438E93503327 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E63F1B2C18438E93503327 /* ContentView.swift */; };
 		83E63F1F2C18438E93503327 /* KepubifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E63F1D2C18438E93503327 /* KepubifyManager.swift */; };
 		83E63F212C18438E93503327 /* KepubifyMacAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E63F202C18438E93503327 /* KepubifyMacAppTests.swift */; };
-		83E63F222C18438E93503327 /* KepubifyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E63F1F2C18438E93503327 /* KepubifyManagerTests.swift */; };
+		83E63F222C18438E93503327 /* KepubifyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E63F232C18438E93503327 /* KepubifyManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		83E63F1A2C18438E93503327 /* KepubifyMacApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KepubifyMacApp.swift; sourceRoot = SOURCE_ROOT; };
-		83E63F1B2C18438E93503327 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceRoot = SOURCE_ROOT; };
-		83E63F1D2C18438E93503327 /* KepubifyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KepubifyManager.swift; sourceRoot = SOURCE_ROOT; };
-		83E63F202C18438E93503327 /* KepubifyMacAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KepubifyMacAppTests.swift; sourceRoot = SOURCE_ROOT; };
-		83E63F1F2C18438E93503327 /* KepubifyManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KepubifyManagerTests.swift; sourceRoot = SOURCE_ROOT; };
+		83E63F1A2C18438E93503327 /* KepubifyMacApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KepubifyMacApp.swift; path = KepubifyMacApp/KepubifyMacApp.swift; sourceTree = SOURCE_ROOT; };
+		83E63F1B2C18438E93503327 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = KepubifyMacApp/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		83E63F1D2C18438E93503327 /* KepubifyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KepubifyManager.swift; path = KepubifyMacApp/KepubifyManager.swift; sourceTree = SOURCE_ROOT; };
+		83E63F202C18438E93503327 /* KepubifyMacAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KepubifyMacAppTests.swift; path = KepubifyMacApp/KepubifyMacAppTests.swift; sourceTree = SOURCE_ROOT; };
+		83E63F232C18438E93503327 /* KepubifyManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KepubifyManagerTests.swift; path = KepubifyMacApp/KepubifyManagerTests.swift; sourceTree = SOURCE_ROOT; };
 		83E63F242C18438E93503327 /* KepubifyMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KepubifyMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E63F252C18438E93503327 /* KepubifyMacAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KepubifyMacAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -38,28 +38,28 @@
 		83E63F012C18438E93503327 /* KepubifyMacApp */ = {
 			isa = PBXGroup;
 			children = (
-				83E63F022C18438E93503327 /* Sources */,
+				83E63F022C18438E93503327 /* KepubifyMacApp */,
 				83E63F032C18438E93503327 /* Tests */,
 				83E63F042C18438E93503327 /* Products */,
 			);
 			name = KepubifyMacApp;
 			sourceTree = "<group>";
 		};
-		83E63F022C18438E93503327 /* Sources */ = {
+		83E63F022C18438E93503327 /* KepubifyMacApp */ = {
 			isa = PBXGroup;
 			children = (
 				83E63F1A2C18438E93503327 /* KepubifyMacApp.swift */,
 				83E63F1B2C18438E93503327 /* ContentView.swift */,
 				83E63F1D2C18438E93503327 /* KepubifyManager.swift */,
 			);
-			name = Sources;
+			name = KepubifyMacApp;
 			sourceTree = "<group>";
 		};
 		83E63F032C18438E93503327 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				83E63F202C18438E93503327 /* KepubifyMacAppTests.swift */,
-				83E63F1F2C18438E93503327 /* KepubifyManagerTests.swift */,
+				83E63F232C18438E93503327 /* KepubifyManagerTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";

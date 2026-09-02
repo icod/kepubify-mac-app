@@ -33,12 +33,3 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           xcodebuild -project KepubifyMacApp.xcodeproj -scheme KepubifyMacApp -configuration Debug -destination 'platform=macOS' test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-          
-      - name: Upload build artifacts
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: KepubifyMacApp
-          path: |
-            **/Build/Products/Release/KepubifyMacApp.app
-            **/DerivedData/Build/Products/Release/KepubifyMacApp.app
