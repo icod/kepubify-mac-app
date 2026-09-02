@@ -68,12 +68,6 @@ struct ContentView: View {
             ) { result in
                 handleFolderImport(result: result)
             }
-            .fileExporter(
-                isPresented: .constant(false),
-                document: nil,
-                contentType: .folder,
-                defaultFilename: "Output"
-            ) { _ in }
             .onAppear {
                 checkKepubify()
             }

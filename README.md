@@ -9,7 +9,7 @@ A macOS application for converting EPUB files to Kobo KEPUB format using the [Ke
 - **Full Kepubify Options**: Access to all Kepubify command-line options through a user-friendly GUI
 - **Real-time Logging**: View conversion progress and output in real-time
 - **Custom Output**: Specify output directory or use in-place conversion
-- **Automatic Build System**: Uses Fastlane for automated builds and testing
+- **Automatic Build System**: Uses Swift Package Manager and GitHub Actions for automated builds and testing
 
 ## Screenshots
 
@@ -23,6 +23,7 @@ The app provides a clean, intuitive interface with:
 
 - **macOS 12.0 (Monterey) or later**
 - **Kepubify command-line tool** installed on your system
+- **Xcode 15.0 or later** (for building from source)
 
 ## Installation
 
@@ -39,47 +40,47 @@ The app provides a clean, intuitive interface with:
 
 ### Building from Source
 
+This project uses **Swift Package Manager** (SPM) for dependency management.
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/icod/kepubify-mac-app.git
    cd kepubify-mac-app
    ```
 
-2. Install dependencies:
+2. Open in Xcode:
    ```bash
-   # Install Ruby dependencies for Fastlane
-   bundle install
+   open Package.swift
+   ```
+   
+   Or build from command line:
+   ```bash
+   swift build -c release
    ```
 
-3. Open the Xcode project:
+3. Run the app:
    ```bash
-   open kepubify-mac-app.xcodeproj
+   swift run
    ```
 
-4. Build and run the app in Xcode
-
-### Using Fastlane
-
-The project includes Fastlane configuration for automated builds and testing:
+### Command Line Build Options
 
 ```bash
-# Install Fastlane dependencies
-bundle install
+# Build for release
+swift build -c release
 
-# Build the app
-bundle exec fastlane build
+# Build for specific architecture
+swift build -c release --arch arm64
+swift build -c release --arch x86_64
 
 # Run tests
-bundle exec fastlane test
+swift test
 
-# Build and test
-bundle exec fastlane build_and_test
+# Run tests with coverage
+swift test --enable-code-coverage
 
-# Create a development build
-bundle exec fastlane dev_build
-
-# Archive for distribution
-bundle exec fastlane archive
+# Build and run
+swift run
 ```
 
 ## Usage
@@ -113,22 +114,17 @@ bundle exec fastlane archive
 
 ```
 kepubify-mac-app/
-├── KepubifyMacApp/
-│   ├── Sources/
-│   │   ├── KepubifyMacApp.swift      # Main app entry point
-│   │   ├── ContentView.swift         # Main UI view
-│   │   └── KepubifyManager.swift     # Kepubify integration and logic
-│   └── Tests/
-│       ├── KepubifyMacAppTests.swift # App tests
-│       └── KepubifyManagerTests.swift # Manager tests
-├── fastlane/
-│   ├── Fastfile                       # Fastlane configuration
-│   └── Appfile                        # App configuration
+├── Package.swift                      # Swift Package Manager manifest
+├── Sources/
+│   ├── KepubifyMacApp.swift         # Main app entry point
+│   ├── ContentView.swift            # Main UI view
+│   └── KepubifyManager.swift        # Kepubify integration and logic
+├── Tests/
+│   ├── KepubifyMacAppTests.swift    # App tests
+│   └── KepubifyManagerTests.swift   # Manager tests
 ├── .github/
 │   └── workflows/
-│       └── build-and-test.yml         # GitHub Actions workflow
-├── Gemfile                            # Ruby dependencies
-├── kepubify-mac-app.xcodeproj/        # Xcode project
+│       └── build-and-test.yml        # GitHub Actions workflow
 └── README.md
 ```
 
@@ -141,22 +137,25 @@ The app includes comprehensive unit tests for:
 - Conversion option handling
 - Status and progress tracking
 
-Run tests using Xcode or Fastlane:
+Run tests using Xcode or command line:
 ```bash
 # Using Xcode
-xcodebuild test -scheme KepubifyMacApp
+# Open Package.swift and run tests in Xcode
 
-# Using Fastlane
-bundle exec fastlane test
+# Using command line
+swift test
+
+# With coverage
+swift test --enable-code-coverage
 ```
 
 ## Continuous Integration
 
 The project includes a GitHub Actions workflow that:
 1. Checks out the repository
-2. Sets up the build environment
-3. Installs dependencies
-4. Builds the app
+2. Sets up the build environment with Xcode
+3. Installs Homebrew dependencies (Kepubify)
+4. Builds the app using Swift Package Manager
 5. Runs all tests
 6. Uploads test results and build artifacts
 
@@ -188,7 +187,11 @@ chmod +x /path/to/kepubify
 
 1. Ensure you have Xcode installed
 2. Make sure you're using a supported macOS version
-3. Clean and rebuild the project
+3. Clean and rebuild the project:
+   ```bash
+   swift package clean
+   swift build
+   ```
 
 ## Contributing
 
@@ -208,7 +211,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Kepubify](https://pgaskin.net/kepubify/) by Patrick Gaskin - The core conversion engine
 - [SwiftUI](https://developer.apple.com/documentation/swiftui) - Apple's modern UI framework
-- [Fastlane](https://fastlane.tools/) - For automated builds and deployment
+- [Swift Package Manager](https://swift.org/package-manager/) - For dependency management
 
 ## Support
 
