@@ -1,5 +1,7 @@
-// Fastfile for Kepubify macOS App
-// Automates building, testing, and deploying the app
+# Fastfile for Kepubify macOS App
+# Automates building, testing, and deploying the app
+
+opt_out_usage
 
 default_platform(:mac)
 
