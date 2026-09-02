@@ -56,7 +56,11 @@ struct ContentView: View {
             .navigationTitle("Kepubify")
             .fileImporter(
                 isPresented: $showFileImporter,
-                allowedContentTypes: [UTType.fileURL],
+                allowedContentTypes: [
+                    UTType(filenameExtension: "epub")!,
+                    UTType(filenameExtension: "kepub")!,
+                    UTType(filenameExtension: "kepub.epub")!
+                ],
                 allowsMultipleSelection: true
             ) { result in
                 handleFileImport(result: result)
