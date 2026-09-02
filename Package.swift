@@ -19,13 +19,9 @@ let package = Package(
             path: "Sources",
             exclude: [],
             resources: [],
-            publicHeadersPath: "",
-            cSettings: nil,
-            cxxSettings: nil,
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
-            ],
-            linkerSettings: nil
+            ]
         ),
         .testTarget(
             name: "KepubifyMacAppTests",
@@ -33,13 +29,9 @@ let package = Package(
             path: "Tests",
             exclude: [],
             resources: [],
-            cSettings: nil,
-            cxxSettings: nil,
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
-            ],
-            linkerSettings: nil
+            ]
         )
-    ],
-    swiftLanguageModes: [.v5]
+    ]
 )
