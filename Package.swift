@@ -18,20 +18,14 @@ let package = Package(
             dependencies: [],
             path: "Sources",
             exclude: [],
-            resources: [],
-            swiftSettings: [
-                .enableExperimentalFeature("StrictConcurrency")
-            ]
+            resources: []
         ),
         .testTarget(
             name: "KepubifyMacAppTests",
             dependencies: ["KepubifyMacApp"],
             path: "Tests",
             exclude: [],
-            resources: [],
-            swiftSettings: [
-                .enableExperimentalFeature("StrictConcurrency")
-            ]
+            resources: []
         )
     ]
 )

@@ -84,7 +84,7 @@ class KepubifyManager: ObservableObject {
     }
     
     // Convert EPUB files
-    func convertFiles(at urls: [URL], options: KepubifyOptions, completion: @escaping (ConversionResult) -> Void) {
+    func convertFiles(at urls: [URL], options: KepubifyOptions, completion: @escaping @Sendable (ConversionResult) -> Void) {
         guard !urls.isEmpty else {
             completion(ConversionResult(success: false, message: "No files selected", outputPath: nil))
             return
@@ -95,7 +95,7 @@ class KepubifyManager: ObservableObject {
             return
         }
         
-        DispatchQueue.main.async {
+        Task { @MainActor in
             self.status = .converting
             self.progress = 0.0
             self.logOutput = "Starting conversion...\n"
@@ -175,7 +175,7 @@ class KepubifyManager: ObservableObject {
                 let data = handle.readDataToEndOfFile()
                 if !data.isEmpty {
                     let output = String(data: data, encoding: .utf8) ?? ""
-                    DispatchQueue.main.async {
+                    Task { @MainActor in
                         self.logOutput += output
                     }
                 }
@@ -185,7 +185,7 @@ class KepubifyManager: ObservableObject {
                 let data = handle.readDataToEndOfFile()
                 if !data.isEmpty {
                     let error = String(data: data, encoding: .utf8) ?? ""
-                    DispatchQueue.main.async {
+                    Task { @MainActor in
                         self.logOutput += "ERROR: " + error
                     }
                 }
@@ -198,7 +198,7 @@ class KepubifyManager: ObservableObject {
                 
                 let exitCode = task.terminationStatus
                 
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     if exitCode == 0 {
                         self.status = .completed
                         self.progress = 1.0
@@ -229,7 +229,7 @@ class KepubifyManager: ObservableObject {
             }
             
         } catch {
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 self.status = .failed
                 self.logOutput += "ERROR: Failed to start kepubify: \(error.localizedDescription)\n"
                 completion(ConversionResult(
