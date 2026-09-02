@@ -27,4 +27,9 @@ jobs:
       - name: Build the app
         run: |
           cd ${{ github.workspace }}
-          xcodebuild -project KepubifyMacApp.xcodeproj -scheme KepubifyMacApp -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          swift build -c release --arch arm64
+          
+      - name: Run tests
+        run: |
+          cd ${{ github.workspace }}
+          swift test -c release --arch arm64
