@@ -60,7 +60,7 @@ class KepubifyManager: ObservableObject {
             let data = pipe.fileHandleForReading.readDataToEndOfFile()
             let output = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            return !output?.isEmpty ?? false
+            return !(output?.isEmpty ?? true)
         } catch {
             return false
         }
