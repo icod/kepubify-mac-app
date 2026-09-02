@@ -27,19 +27,12 @@ jobs:
       - name: Build the app
         run: |
           cd ${{ github.workspace }}
-          swift build -c release --arch arm64 --arch x86_64
+          xcodebuild -project KepubifyMacApp.xcodeproj -scheme KepubifyMacApp -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
           
       - name: Run tests
         run: |
           cd ${{ github.workspace }}
-          swift test -c release --arch arm64 --arch x86_64
-          
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: .build/arm64-apple-macosx/release/
+          xcodebuild -project KepubifyMacApp.xcodeproj -scheme KepubifyMacApp -configuration Debug -destination 'platform=macOS' test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
           
       - name: Upload build artifacts
         if: success()
@@ -47,5 +40,5 @@ jobs:
         with:
           name: KepubifyMacApp
           path: |
-            .build/arm64-apple-macosx/release/KepubifyMacApp
-            .build/x86_64-apple-macosx/release/KepubifyMacApp
+            **/Build/Products/Release/KepubifyMacApp.app
+            **/DerivedData/Build/Products/Release/KepubifyMacApp.app

@@ -1,0 +1,362 @@
+// !$*UTF8*$
+{
+	archiveVersion = 1;
+	objectVersion = 50;
+	classes = {
+	};
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0000001234567890ABCDEF01 /* KepubifyMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000012345678900000001 /* KepubifyMacApp.swift */; };
+		A0000001234567890ABCDEF02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000012345678900000002 /* ContentView.swift */; };
+		A0000001234567890ABCDEF03 /* KepubifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000012345678900000003 /* KepubifyManager.swift */; };
+		A0000001234567890ABCDEF04 /* KepubifyMacAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000012345678900000004 /* KepubifyMacAppTests.swift */; };
+		A0000001234567890ABCDEF05 /* KepubifyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000012345678900000005 /* KepubifyManagerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A00000012345678900000001 /* KepubifyMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KepubifyMacApp.swift; sourceRoot = SOURCE_ROOT; };
+		A00000012345678900000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceRoot = SOURCE_ROOT; };
+		A00000012345678900000003 /* KepubifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KepubifyManager.swift; sourceRoot = SOURCE_ROOT; };
+		A00000012345678900000004 /* KepubifyMacAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KepubifyMacAppTests.swift; sourceRoot = SOURCE_ROOT; };
+		A00000012345678900000005 /* KepubifyManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KepubifyManagerTests.swift; sourceRoot = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000012345678911111111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000012345678910000000 /* KepubifyMacApp */ = {
+			isa = PBXGroup;
+			children = (
+				A00000012345678910000001 /* Sources */,
+				A00000012345678910000002 /* Tests */,
+				A00000012345678910000003 /* Products */,
+			);
+			name = KepubifyMacApp;
+			sourceTree = "<group>";
+		};
+		A00000012345678910000001 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A00000012345678900000001 /* KepubifyMacApp.swift */,
+				A00000012345678900000002 /* ContentView.swift */,
+				A00000012345678900000003 /* KepubifyManager.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		A00000012345678910000002 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000012345678900000004 /* KepubifyMacAppTests.swift */,
+				A00000012345678900000005 /* KepubifyManagerTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		A00000012345678910000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000012345678920000001 /* KepubifyMacApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000012345678920000000 /* KepubifyMacApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000012345678930000000 /* Build configuration list for PBXNativeTarget "KepubifyMacApp" */;
+			buildPhases = (
+				A00000012345678911111112 /* Sources */,
+				A00000012345678911111111 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KepubifyMacApp;
+			productName = KepubifyMacApp;
+			productReference = A00000012345678920000001 /* KepubifyMacApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000012345678920000002 /* KepubifyMacAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000012345678930000001 /* Build configuration list for PBXNativeTarget "KepubifyMacAppTests" */;
+			buildPhases = (
+				A00000012345678911111114 /* Sources */,
+				A00000012345678911111111 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000012345678940000000 /* PBXTargetDependency */,
+			);
+			name = KepubifyMacAppTests;
+			productName = KepubifyMacAppTests;
+			productReference = A00000012345678920000002 /* KepubifyMacAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000012345678900000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					A00000012345678920000000 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					A00000012345678920000002 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = A00000012345678920000000;
+					};
+				};
+			};
+			buildConfigurationList = A00000012345678930000002 /* Build configuration list for PBXProject "KepubifyMacApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A00000012345678910000000 /* KepubifyMacApp */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000012345678920000000 /* KepubifyMacApp */,
+				A00000012345678920000002 /* KepubifyMacAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A00000012345678920000001 /* KepubifyMacApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = KepubifyMacApp.app;
+			remoteRef = A00000012345678920000000 /* KepubifyMacApp */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A00000012345678920000002 /* KepubifyMacAppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KepubifyMacAppTests.xctest;
+			remoteRef = A00000012345678920000002 /* KepubifyMacAppTests */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000012345678911111112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001234567890ABCDEF01 /* KepubifyMacApp.swift in Sources */,
+				A0000001234567890ABCDEF02 /* ContentView.swift in Sources */,
+				A0000001234567890ABCDEF03 /* KepubifyManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000012345678911111114 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001234567890ABCDEF04 /* KepubifyMacAppTests.swift in Sources */,
+				A0000001234567890ABCDEF05 /* KepubifyManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A00000012345678940000000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000012345678920000000 /* KepubifyMacApp */;
+			targetProxy = A00000012345678940000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section */
+		A00000012345678940000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000012345678900000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000012345678920000000;
+			remoteInfo = KepubifyMacApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin XCBuildConfiguration section */
+		A00000012345678930000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00000012345678930000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00000012345678930000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KepubifyMacApp.app/Contents/MacOS/KepubifyMacApp";
+			};
+			name = Debug;
+		};
+		A00000012345678930000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KepubifyMacApp.app/Contents/MacOS/KepubifyMacApp";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000012345678930000000 /* Build configuration list for PBXNativeTarget "KepubifyMacApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000012345678930000003 /* Debug */,
+				A00000012345678930000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000012345678930000001 /* Build configuration list for PBXNativeTarget "KepubifyMacAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000012345678930000005 /* Debug */,
+				A00000012345678930000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000012345678930000002 /* Build configuration list for PBXProject "KepubifyMacApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000012345678930000003 /* Debug */,
+				A00000012345678930000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000012345678900000000 /* Project object */;
+}
