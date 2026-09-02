@@ -9,16 +9,15 @@ let package = Package(
         .macOS(".v12")
     ],
     products: [
-        .app(
+        .executable(
             name: "KepubifyMacApp",
             targets: ["KepubifyMacApp"]
         )
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "KepubifyMacApp",
             dependencies: [],
-            resources: [],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
             ]
@@ -26,7 +25,6 @@ let package = Package(
         .testTarget(
             name: "KepubifyMacAppTests",
             dependencies: ["KepubifyMacApp"],
-            resources: [],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
             ]
