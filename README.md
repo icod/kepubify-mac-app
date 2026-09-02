@@ -211,6 +211,31 @@ chmod +x /path/to/kepubify
    swift build
    ```
 
+### App cannot be opened (damaged app error)
+
+When downloading from GitHub, macOS may show: **"App is damaged and can't be opened"**
+
+This is macOS Gatekeeper blocking unsigned apps. Solutions:
+
+1. **Right-click and Open** (first time only):
+   - Right-click the app in Finder
+   - Select "Open"
+   - Confirm in the dialog
+
+2. **Remove quarantine flag** (Terminal):
+   ```bash
+   xattr -d com.apple.quarantine /Applications/KepubifyMacApp.app
+   ```
+
+3. **Allow from Anywhere** (temporary, for testing):
+   - Open System Settings > Privacy & Security
+   - Under "Allow apps downloaded from:", select "Anywhere"
+   - Try opening the app again
+   - **Note:** Revert this setting after testing for security
+
+4. **Code signing** (for distribution):
+   - The app is not code-signed. For official distribution, you need a Developer ID certificate from Apple.
+
 ## Contributing
 
 Contributions are welcome! Please:

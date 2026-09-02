@@ -88,7 +88,16 @@ jobs:
             1. Download the .zip file
             2. Extract the .app bundle
             3. Move to Applications folder
-            4. Right-click and Open to bypass Gatekeeper (first time only)
+            4. **Right-click and Open** to bypass Gatekeeper (first time only)
+               - macOS will show "App is damaged and can't be opened"
+               - This is normal for unsigned apps from the internet
+               - Right-click > Open > Confirm in the dialog
+            
+            ### Troubleshooting
+            If you still can't open the app, run in Terminal:
+            ```bash
+            xattr -d com.apple.quarantine ~/Downloads/KepubifyMacApp.app
+            ```
             
             **Note:** Requires [Kepubify](https://pgaskin.net/kepubify/) to be installed on your system.
             Install with: `brew install kepubify`
