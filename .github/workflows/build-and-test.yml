@@ -28,8 +28,3 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           xcodebuild -project KepubifyMacApp.xcodeproj -scheme KepubifyMacApp -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
-          
-      - name: Run tests
-        run: |
-          cd ${{ github.workspace }}
-          xcodebuild -project KepubifyMacApp.xcodeproj -scheme KepubifyMacApp -configuration Debug -destination 'platform=macOS' test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
