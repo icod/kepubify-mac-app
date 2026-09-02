@@ -15,7 +15,7 @@ let package = Package(
         )
     ],
     targets: [
-        .executableTarget(
+        .target(
             name: "KepubifyMacApp",
             dependencies: [],
             swiftSettings: [
@@ -29,6 +29,5 @@ let package = Package(
                 .enableExperimentalFeature("StrictConcurrency")
             ]
         )
-    ],
-    swiftLanguageModes: [.v5]
+    ]
 )
