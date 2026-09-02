@@ -13,7 +13,7 @@ let package = Package(
         )
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "KepubifyMacApp",
             dependencies: [],
             path: "Sources",
