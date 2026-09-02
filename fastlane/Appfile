@@ -1,0 +1,12 @@
+# Appfile for Fastlane configuration
+
+app_identifier("com.icod.kepubify-mac-app")  # Bundle identifier
+apple_id("your_apple_id@example.com")      # Apple Developer account email
+
+# For App Store deployment (optional)
+# team_id("YOUR_TEAM_ID")
+# itunes_connect_team_name("YOUR_TEAM_NAME")
+
+# For code signing
+# signing_certificate("Mac Developer")
+# provisioning_profile("KepubifyMacApp_Profile")

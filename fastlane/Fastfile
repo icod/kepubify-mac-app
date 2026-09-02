@@ -1,0 +1,59 @@
+// Fastfile for Kepubify macOS App
+// Automates building, testing, and deploying the app
+
+default_platform(:mac)
+
+platform :mac do
+  desc "Build the macOS app"
+  lane :build do
+    # Build the app in Release mode
+    build_app(
+      scheme: "KepubifyMacApp",
+      configuration: "Release",
+      clean: true,
+      export_method: "app-store"
+    )
+  end
+
+  desc "Run tests"
+  lane :test do
+    # Run unit tests
+    scan(
+      scheme: "KepubifyMacApp",
+      configuration: "Debug",
+      clean: true,
+      only_testing: ["KepubifyMacAppTests", "KepubifyManagerTests"],
+      code_coverage: true,
+      output_directory: "fastlane/test_output",
+      output_files: "report.junit.xml"
+    )
+  end
+
+  desc "Build and test"
+  lane :build_and_test do
+    build
+    test
+  end
+
+  desc "Create a development build"
+  lane :dev_build do
+    build_app(
+      scheme: "KepubifyMacApp",
+      configuration: "Debug",
+      clean: true,
+      export_method: "development"
+    )
+  end
+
+  desc "Archive the app for distribution"
+  lane :archive do
+    gym(
+      scheme: "KepubifyMacApp",
+      configuration: "Release",
+      clean: true,
+      export_method: "app-store",
+      output_directory: "fastlane/builds",
+      output_name: "KepubifyMacApp_#{Time.now.strftime('%Y%m%d_%H%M%S')}.app"
+    )
+  end
+end
