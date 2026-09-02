@@ -119,7 +119,7 @@ class KepubifyManagerTests: XCTestCase {
         manager.convertFiles(at: [testFile], options: KepubifyOptions()) { result in
             XCTAssertFalse(result.success)
             XCTAssertNotNil(result.message)
-            XCTAssertTrue(result.message!.contains("Kepubify not found"))
+            XCTAssertTrue(result.message?.contains("Kepubify not found") ?? false)
             expectation.fulfill()
         }
         
